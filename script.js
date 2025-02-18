@@ -1,7 +1,12 @@
 document.getElementById('generate').addEventListener('click', () => {
-    const length = parseInt(document.getElementById('length').value);
+    const length = parseInt(document.getElementById('lengthRange').value);
     const password = generatePassword(length);
     document.getElementById('password').value = password;
+});
+
+document.getElementById('lengthRange').addEventListener('input', () => {
+    const lengthValue = document.getElementById('lengthRange').value;
+    document.getElementById('lengthValue').textContent = lengthValue;
 });
 
 function generatePassword(length) {
